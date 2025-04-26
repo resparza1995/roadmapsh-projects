@@ -1,2 +1,2 @@
-# roadmapsh-projects
-Project containing solutions to different projects to practice from the roadmap.sh.
+# Roadmapsh Projects
+Project containing solutions to different roadmap.sh project ideas.
