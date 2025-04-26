@@ -3,8 +3,7 @@
 
 A simple caching proxy server built with Spring Boot.
 It forwards HTTP requests to an origin server and caches the responses using Caffeine for improved performance.   
-**Exercise of** [roadmap.sh](https://roadmap.sh/projects/caching-server)
-
+**Exercise of** https://roadmap.sh/projects/caching-server
 ## Features
 Forward requests to a specified origin server.
 Cache successful responses automatically.
