@@ -7,6 +7,10 @@ Python 3.10 or newer
 fastapi: `pip install "fastapi[standard]"`
 
 ## How to run
+1. Create virtual environment `python -m venv .venv`  
+2. Activate the env `.venv\Scripts\Activate.ps1`  
+3. Run `fastapi dev main.py`  
+
 Default available at `http://127.0.0.1:8000`  
 Swagger at `http://127.0.0.1:8000/docs`  
 More docs at `http://127.0.0.1:8000/redoc`  
