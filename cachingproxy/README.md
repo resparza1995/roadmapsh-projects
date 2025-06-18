@@ -4,10 +4,15 @@
 A simple caching proxy server built with Spring Boot.
 It forwards HTTP requests to an origin server and caches the responses using Caffeine for improved performance.   
 
+## Security features
+Blocked paths and User-Agents are defined in the application.properties file and can be modified without changing the code.  
+`URL Filtering`: Blocks incoming requests containing suspicious keywords such as admin in the path.
+`User-Agent Filtering`: Denies access to requests with potentially malicious User-Agents like curl, python-requests, or sqlmap.
+
 ## Features
 Forward requests to a specified origin server.
 Cache successful responses automatically.
-Return cached responses when available.
+Return cached responses when available.  
 
 Custom `X-Cache` response header:
 - `HIT` if the response was served from cache.
@@ -40,10 +45,7 @@ You can clear the cache dynamically without restarting the application by making
 
 
 ### Example
-Make a request with curl:
-
-    curl http://localhost:3000/products
-
+**Url example**: http://localhost:3000/products
 **On first request:** forwarded to http://dummyjson.com/products and cached (X-Cache: MISS).
 **On subsequent requests**: served from cache (X-Cache: HIT).
 
