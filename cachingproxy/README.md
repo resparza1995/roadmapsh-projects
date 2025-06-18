@@ -6,8 +6,8 @@ It forwards HTTP requests to an origin server and caches the responses using Caf
 
 ## Security features
 Blocked paths and User-Agents are defined in the application.properties file and can be modified without changing the code.  
-`URL Filtering`: Blocks incoming requests containing suspicious keywords such as admin in the path.
-`User-Agent Filtering`: Denies access to requests with potentially malicious User-Agents like curl, python-requests, or sqlmap.
+`URL Filtering`: Blocks incoming requests containing suspicious keywords such as admin in the path.   
+`User-Agent Filtering`: Denies access to requests with potentially malicious User-Agents like curl, python-requests, or sqlmap.  
 
 ## Features
 Forward requests to a specified origin server.
