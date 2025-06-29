@@ -5,6 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
+import com.fyttaiscoding.usersms.models.User;
 import com.fyttaiscoding.usersms.services.UserService;
 
 @SpringBootApplication
@@ -15,9 +16,10 @@ public class UsersmsApplication {
 	}
 
 	@Bean
-    public CommandLineRunner loadData(UserService userService) {
+    CommandLineRunner loadData(UserService userService) {
         return args -> {
-            userService.initializeSampleUsers();
+            userService.createUser(new User(null, "User1", "user1@example.com"));
+            userService.createUser(new User(null, "User2", "user2@example.com"));
         };
     }
 

@@ -49,6 +49,7 @@ public class InMemoryUserRepository implements IUserRepository {
         store.remove(id);
     }
 
+    @Override
     public List<User> findAll() {
         return new ArrayList<>(store.values());
     }

@@ -13,3 +13,4 @@
 - [ ] Deploy the Platform
 - [ ] CI/CD Integration
 
+No auth/security implemented for simplicity.

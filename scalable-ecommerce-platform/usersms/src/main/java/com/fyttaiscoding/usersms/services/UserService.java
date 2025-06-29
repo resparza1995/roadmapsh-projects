@@ -6,12 +6,13 @@ import java.util.Optional;
 import org.springframework.stereotype.Service;
 
 import com.fyttaiscoding.usersms.models.User;
+import com.fyttaiscoding.usersms.repositories.IUserRepository;
 import com.fyttaiscoding.usersms.repositories.InMemoryUserRepository;
 
 @Service
 public class UserService {
 
-    private final InMemoryUserRepository userRepository;
+    private final IUserRepository userRepository;
 
     public UserService(InMemoryUserRepository userRepository) {
         this.userRepository = userRepository;
@@ -40,8 +41,4 @@ public class UserService {
         userRepository.deleteById(id);
     }
 
-    public void initializeSampleUsers() {
-        createUser(new User(null, "Alice", "alice@example.com"));
-        createUser(new User(null, "Bob", "bob@example.com"));
-    }
 }
