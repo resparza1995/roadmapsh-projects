@@ -18,8 +18,8 @@ public class UsersmsApplication {
 	@Bean
     CommandLineRunner loadData(UserService userService) {
         return args -> {
-            userService.createUser(new User(null, "User1", "user1@example.com"));
-            userService.createUser(new User(null, "User2", "user2@example.com"));
+            userService.createUser(new User(1l, "User1", "user1@example.com"));
+            userService.createUser(new User(2l, "User2", "user2@example.com"));
         };
     }
 

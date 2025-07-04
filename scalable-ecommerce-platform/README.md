@@ -1,8 +1,8 @@
 - [x] usersms
-- [ ] payments
-- [ ] products
+- [x] payments
+- [x] products
 - [ ] notifications
-- [ ] shopping cart
+- [x] shopping cart
 
 - [ ] Set up Docker and Docker Compose
 
