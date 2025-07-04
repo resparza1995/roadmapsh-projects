@@ -1,0 +1,26 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: api-gateway
+
+  cloud:
+    gateway:
+      routes:
+        - id: shopping-cart
+          uri: http://shoppingcartms:8081
+          predicates:
+            - Path=/cart/**
+        - id: payment-service
+          uri: http://paymentsms:8082
+          predicates:
+            - Path=/payments/**
+        - id: user-service
+          uri: http://usersms:8083
+          predicates:
+            - Path=/users/**
+        - id: product-service
+          uri: http://productsms:8084
+          predicates:
+            - Path=/products/**
