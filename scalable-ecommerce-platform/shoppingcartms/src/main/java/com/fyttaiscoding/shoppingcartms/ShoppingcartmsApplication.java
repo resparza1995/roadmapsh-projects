@@ -20,7 +20,6 @@ public class ShoppingcartmsApplication {
         return args -> {
             cartService.addItem(1l, new CartItem("prod1", 2));
             cartService.addItem(1l, new CartItem("prod2", 1));
-
             cartService.addItem(2l, new CartItem("prod3", 3));
         };
     }

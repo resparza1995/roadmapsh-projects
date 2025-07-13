@@ -1,14 +1,28 @@
-# Use OpenJDK 21 base image
-FROM eclipse-temurin:21-jdk-alpine
+# Stage 1: Build the project
+FROM maven:3.9.10-eclipse-temurin-21 AS build
 
-# Set working directory inside container
 WORKDIR /app
 
-# Copy the built jar from target directory (make sure to build locally first)
-COPY target/*.jar app.jar
+# Copy only pom.xml and download dependencies first (to cache them)
+COPY pom.xml .
+RUN mvn dependency:go-offline
 
-# Expose port
+# Copy source code
+COPY src ./src
+
+# Build the application JAR
+RUN mvn clean package -DskipTests
+
+# Stage 2: Run the app with lightweight image
+FROM eclipse-temurin:21-jre
+
+WORKDIR /app
+
+# Copy the jar from build stage
+COPY --from=build /app/target/*.jar app.jar
+
+# Expose port 8080 (or your configured port)
 EXPOSE 8080
 
-# Run the application
-ENTRYPOINT ["java","-jar","app.jar"]
+# Run the jar
+ENTRYPOINT ["java", "-jar", "app.jar"]
